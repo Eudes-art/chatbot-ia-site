@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirmation de commande</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="confirmation-container">
+    <h1>Merci pour votre commande !</h1>
+    <p>Nous avons bien reçu votre demande pour le <span id="packName"></span>.</p>
+    <p>Un email de confirmation a été envoyé à votre adresse.</p>
+  </div>
+  <script>
+    // Récupérer les paramètres de l'URL
+    const params = new URLSearchParams(window.location.search);
+    const pack = params.get('pack');
+    document.getElementById('packName').textContent = pack;
+  </script>
+</body>
+</html>
